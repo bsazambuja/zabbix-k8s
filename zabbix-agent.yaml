@@ -75,12 +75,14 @@ metadata:
   namespace: monitoring
   name: zabbix-agent-claim2
   labels:
+    type: local
      zabbix-app: zabbix-agent
 spec:
   storageClassName: manual
+  capacity:
+    storage: 100Mi  
   accessModes:
   - ReadWriteOnce
-  resources:
-    requests:
-      storage: 100Mi
+  hostPath:
+    path: /data/zabbix/zabbix_agentd.d
 status: {}
