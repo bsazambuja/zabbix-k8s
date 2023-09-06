@@ -75,7 +75,7 @@ kind: PersistentVolumeClaim
 
 metadata:
   namespace: monitoring
-  creationTimestamp: null
+
   labels:
      zabbix-app: zabbix-agent
   name: zabbix-agent-claim2
