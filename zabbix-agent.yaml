@@ -46,7 +46,7 @@ spec:
       - name: zabbix-agent-claim2
         persistentVolumeClaim:
           claimName: zabbix-agent-claim2
-          readOnly: true
+          
 ### Service 
 ---
 apiVersion: v1
@@ -80,8 +80,9 @@ metadata:
      zabbix-app: zabbix-agent
   name: zabbix-agent-claim2
 spec:
+  storageClassName: manual
   accessModes:
-  - ReadOnlyMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 100Mi
