@@ -11,7 +11,7 @@ spec:
     matchLabels:
       zabbix-app: zabbix-server
   serviceName: "zabbix-web-nginx-mysql"
-  replicas: 1
+  replicas: 2
   #strategy:
   #  type: Recreate
   template:
