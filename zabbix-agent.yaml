@@ -46,13 +46,15 @@ spec:
       - name: zabbix-agent-claim2
         persistentVolumeClaim:
           claimName: zabbix-agent-claim2
-          
+          readOnly: true
 ### Service 
 ---
 apiVersion: v1
 kind: Service
+
 metadata:
   namespace: monitoring
+  creationTimestamp: null
   labels:
     zabbix-app: zabbix-agent
   name: zabbix-agent
@@ -67,21 +69,20 @@ status:
   loadBalancer: {}
 
 ### PersistentVolumeClain2
-
-
-
-kind: PersistentVolumeClaim
+---
 apiVersion: v1
+kind: PersistentVolumeClaim
+
 metadata:
   namespace: monitoring
-  name: zabbix-agent-claim2
+  creationTimestamp: null
   labels:
-    zabbix-app: zabbix-agent
+     zabbix-app: zabbix-agent
+  name: zabbix-agent-claim2
 spec:
-  storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+  - ReadOnlyMany
   resources:
     requests:
-      storage: 5Gi
-status: {}    
+      storage: 100Mi
+status: {}
