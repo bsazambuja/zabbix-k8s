@@ -81,7 +81,7 @@ metadata:
   name: zabbix-agent-claim2
 spec:
   accessModes:
-  - ReadOnlyMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 100Mi
