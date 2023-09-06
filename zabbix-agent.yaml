@@ -75,7 +75,6 @@ metadata:
   namespace: monitoring
   name: zabbix-agent-claim2
   labels:
-    type: local
      zabbix-app: zabbix-agent
 spec:
   storageClassName: manual
